@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0f; /* midnight black */
+  --foreground: #e8e0ff; /* soft violet-tinted white */
+  --accent-primary: #8b5cf6; /* violet-500 */
+  --accent-primary-600: #7c3aed; /* violet-600 */
+  --accent-primary-700: #6d28d9; /* violet-700 */
+  --muted: #101018;
+  --muted-2: #131424;
 }
 
 @theme inline {
@@ -12,15 +17,110 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Force dark aesthetic regardless of system */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0b0b10;
+    --foreground: #e8e0ff;
   }
 }
 
+html { scroll-behavior: smooth; }
+
 body {
-  background: var(--background);
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(124,58,237,0.25) 0%, rgba(124,58,237,0.12) 25%, transparent 60%), var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.65;
 }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover { background: var(--accent-primary-600); }
+
+/* Utility helpers for violet theme */
+.violet-gradient {
+  background-image: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-700) 100%);
+}
+.card-bg {
+  background: linear-gradient(180deg, rgba(139,92,246,0.08) 0%, rgba(25,20,45,0.6) 120%), var(--muted);
+  border: 1px solid rgba(139,92,246,0.15);
+}
+.glass {
+  background: rgba(18, 16, 28, 0.6);
+  backdrop-filter: blur(12px);
+}
+
+.glow-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+}
+.glow-center > .blob {
+  width: 28rem;
+  height: 28rem;
+  border-radius: 9999px;
+  background: radial-gradient(closest-side, rgba(139,92,246,0.55), rgba(139,92,246,0.35), transparent 70%);
+  filter: blur(120px);
+  opacity: .45;
+}
+
+/* Subtle animated grid for hero */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(139,92,246,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139,92,246,0.08) 1px, transparent 1px);
+  background-size: 60px 60px, 60px 60px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 60%, transparent 100%);
+  animation: gridFloat 18s linear infinite;
+}
+
+@keyframes gridFloat {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 60px 60px, 60px 60px; }
+}
+
+/* Float and fade utilities */
+@keyframes floatY { 0% { transform: translateY(0) } 50% { transform: translateY(-10px) } 100% { transform: translateY(0) } }
+@keyframes floatX { 0% { transform: translateX(0) } 50% { transform: translateX(8px) } 100% { transform: translateX(0) } }
+@keyframes fadeUp { 0% { opacity: 0; transform: translateY(12px) } 100% { opacity: 1; transform: translateY(0) } }
+@keyframes glowPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(139,92,246,.35) } 50% { box-shadow: 0 0 40px 0 rgba(139,92,246,.55) } }
+
+.animate-float-slow { animation: floatY 7s ease-in-out infinite; }
+.animate-float { animation: floatY 5s ease-in-out infinite; }
+.animate-float-x { animation: floatX 6s ease-in-out infinite; }
+.animate-fade-up { animation: fadeUp .7s ease forwards; }
+.animate-glow { animation: glowPulse 3.5s ease-in-out infinite; }
+
+/* Shiny gradient button */
+.btn-shine { position: relative; overflow: hidden; }
+.btn-shine:before {
+  content: "";
+  position: absolute;
+  top: -100%; left: -30%;
+  width: 40%; height: 300%;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.35) 50%, transparent 100%);
+  transform: rotate(20deg);
+  animation: sheen 3.5s ease-in-out infinite;
+}
+@keyframes sheen { 0% { left: -40% } 60% { left: 140% } 100% { left: 140% } }
+
+/* Scroll indicator */
+.scroll-indicator { width: 26px; height: 44px; border: 2px solid rgba(139,92,246,.6); border-radius: 16px; position: relative; margin: 0 auto; }
+.scroll-indicator:after { content: ""; position: absolute; top: 6px; left: 50%; width: 6px; height: 6px; background: rgba(139,92,246,.9); border-radius: 50%; transform: translateX(-50%); animation: dot 1.6s ease-in-out infinite; }
+@keyframes dot { 0% { opacity:.8; transform: translate(-50%,0) } 70% { opacity:.1; transform: translate(-50%,16px) } 100% { opacity:0; transform: translate(-50%,16px) } }

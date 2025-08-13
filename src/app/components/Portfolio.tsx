@@ -1,0 +1,296 @@
+'use client'
+
+import { useState } from 'react'
+import Image from 'next/image'
+
+export default function Portfolio() {
+  const [activeFilter, setActiveFilter] = useState('all')
+
+  const portfolioItems = [
+    {
+      id: 1,
+      title: "Lemery Colleges Promotional Video",
+      category: "video",
+      description: "Professional corporate video showcasing company values and culture",
+      image: "/thumbnails/video1.jpg",
+      tags: ["Corporate", "Branding", "Video Editing"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=995853468991606&rdid=1NSRcQ4A59BQeKce"
+    },
+    {
+      id: 2,
+      title: "Visual Poster Design",
+      category: "design",
+      description: "Captivating poster designs that bring short films to life in a single frame.",
+      image: "/thumbnails/poster.svg",
+      tags: ["ShortFilm", "Documentary", "AnimatedFilm"],
+      url: "https://www.instagram.com/francescamotaa_/reels/"
+    },
+    {
+      id: 3,
+      title: "Social Media Series",
+      category: "social",
+      description: "Engaging social media content series for lifestyle brand",
+      image: "/thumbnails/series.svg",
+      tags: ["Social Media", "Content Creation", "Graphics"],
+      url: "https://www.instagram.com/francescamotaa_/reels/"
+    },
+    
+    {
+      id: 5,
+      title: "Autobiography Video",
+      category: "video",
+      description: "High-energy promotional video for major industry event",
+      image: "/thumbnails/video2.jpg",
+      tags: ["Events", "Promotional", "Video Editing"],
+      url: "/AUTOBIOGRAPHY.mp4"
+    },
+    {
+      id: 6,
+      title: "Social Media Public Materials",
+      category: "design",
+      description: "Eye-catching social media designs that engage, inform, and inspire your audience.",
+      image: "/thumbnails/social.svg",
+      tags: ["Engage", "Inform", "Inspire"],
+      url: "https://www.instagram.com/francescamotaa_/reels/"
+    },
+    {
+      id: 7,
+      title: "Senior High Promotional Video",
+      category: "video",
+      description: "Energetic cutdown edit optimized for social platforms with fast pacing and bold captions.",
+      image: "/thumbnails/video3.jpg",
+      tags: ["Music", "Cutdown", "Fast Edit"],
+      url: "https://www.facebook.com/holyfamilyacademyofficial/videos/608500288464671/?vh=e&fs=e&mibextid=wwXIfr&rdid=Cy7QpmKc24JNYeTq#"
+    },
+    {
+      id: 8,
+      title: "OSJAA Teaser",
+      category: "video",
+      description: "Teaser edit with interview bites and b-roll to build curiosity and pace.",
+      image: "/thumbnails/video4.jpg",
+      tags: ["Documentary", "Teaser", "Story"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=639416051971626&rdid=kb9Kq4PsxHPOC7dC"
+    },
+    {
+      id: 9,
+      title: "OSJAA DAY1 Video",
+      category: "video",
+      description: "Dynamic walkthrough showcasing facilities, student life, and campus highlights.",
+      image: "/thumbnails/video5.jpg",
+      tags: ["Campus", "Walkthrough", "Video Editing"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=485353087709561&rdid=LfX9c3s0dpaiSK7q"
+    },
+    {
+      id: 10,
+      title: "Short Film Trailer",
+      category: "video",
+      description: "Tight trailer cut featuring impactful shots, text cards, and dynamic sound design.",
+      image: "/thumbnails/video6.jpg",
+      tags: ["Trailer", "Short Film", "Edit"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=1221759782272867&rdid=IHsmLUGoklxWya2U"
+    },
+    {
+      id: 11,
+      title: "Siglakasan Day 1",
+      category: "video",
+      description: "Teaser edit with interview bites and b-roll to build curiosity and pace.",
+      image: "/thumbnails/video7.jpg",
+      tags: ["Documentary", "Teaser", "Story"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=1295503781807697&rdid=KF2S4cpED7BzEbcy"
+    },
+    {
+      id: 12,
+      title: "Leadership Training Event",
+      category: "video",
+      description: "Narrative-driven brand story with interviews, b‑roll, and sound design.",
+      image: "/thumbnails/video8.jpg",
+      tags: ["Brand", "Story", "Edit"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=1226043195092267&rdid=DOJd45K92HrzbIY4"
+    },
+    {
+      id: 13,
+      title: "Graduation Prom Highlights",
+      category: "video",
+      description: "Heartfelt highlights capturing speeches, moments, and celebration.",
+      image: "/thumbnails/video9.jpg",
+      tags: ["Graduation", "Highlights", "Video Editing"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=486686337260855&rdid=1IoAhUHUvTt8rLED"
+    },
+    {
+      id: 14,
+      title: "Holy Family Promotional Video",
+      category: "video",
+      description: "High-energy recap featuring dynamic cuts, crowd reactions, and rhythmic pacing.",
+      image: "/thumbnails/video10.jpg",
+      tags: ["Sports", "Highlights", "Video Editing"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=7749415925117772&rdid=yOqfUsWnBTQIlt2C"
+    },
+    {
+      id: 15,
+      title: "Grand Coronation Night",
+      category: "video",
+      description: "Stylized reel with cinematic color, smooth transitions, and dynamic pacing.",
+      image: "/thumbnails/video11.jpg",
+      tags: ["Cinematic", "Reel", "Edit"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=984006493139816&rdid=4Lvc7cDPIpfgbYeF"
+    },
+    {
+      id: 16,
+      title: "El Filibusterismo Teaser",
+      category: "video",
+      description: "A teaser cut blending interviews and b‑roll with rhythmic pacing and titles.",
+      image: "/thumbnails/video12.jpg",
+      tags: ["Documentary", "Teaser", "Edit"],
+      url: "https://www.facebook.com/joan.16.cuenca/videos/1991234421219578/?fs=e&mibextid=wwXIfr&rdid=Pr0qzqN26cUrQGrU#"
+    },
+    {
+      id: 17,
+      title: "DAZSMA Recollection Video",
+      category: "video",
+      description: "A concise audio‑visual presentation highlighting key programs, people, and achievements.",
+      image: "/thumbnails/video13.jpg",
+      tags: ["Institutional", "AVP", "Edit"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=1235224821295411&rdid=vhzfR0afKWM2ruaR"
+    },
+    {
+      id: 18,
+      title: "Our Lady of Mercy Academy",
+      category: "video",
+      description: "Orientation highlights with campus fly-throughs, departments, and student life.",
+      image: "/thumbnails/video14.jpg",
+      tags: ["Campus", "Orientation", "Edit"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=1774647559605909&rdid=rMbd1uUT9rMOnWdm"
+    },
+    {
+      id: 19,
+      title: "BasicFaithFormationG11",
+      category: "video",
+      description: "A warm recap capturing activities, interviews, and impact moments from outreach.",
+      image: "/thumbnails/video15.jpg",
+      tags: ["Outreach", "Recap", "Video Editing"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=205785872507985&rdid=uAoou3tv4snocXzN"
+    },
+    {
+      id: 20,
+      title: "St. Joseph College of Rosario",
+      category: "video",
+      description: "Fast‑paced anniversary highlights with dynamic cuts and emotive moments.",
+      image: "/thumbnails/video16.jpg",
+      tags: ["Anniversary", "Highlights", "Video Editing"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=496438959957903"
+    },
+    {
+      id: 21,
+      title: "Holy Family Intramurals",
+      category: "video",
+      description: "Vibrant event recap featuring performances, audience energy, and dynamic pacing.",
+      image: "/thumbnails/video17.jpg",
+      tags: ["Cultural", "Event", "Video Editing"],
+      url: "/Intrams.mp4"
+    }
+  ]
+
+  const filters = [
+    { key: 'all', label: 'All Work' },
+    { key: 'video', label: 'Video Editing' },
+    { key: 'design', label: 'Graphic Design' },
+    
+    { key: 'social', label: 'Social Media' }
+  ]
+
+  const filteredItems = activeFilter === 'all' 
+    ? portfolioItems 
+    : portfolioItems.filter(item => item.category === activeFilter)
+
+  return (
+    <section id="portfolio" className="py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-violet-100 mb-4">
+            My Portfolio
+          </h2>
+          <p className="text-xl text-violet-200/80 max-w-3xl mx-auto">
+            A showcase of my best work across video editing, graphic design, and creative content creation
+          </p>
+        </div>
+
+        {/* Filter Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {filters.map((filter) => (
+            <button
+              key={filter.key}
+              onClick={() => setActiveFilter(filter.key)}
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 border border-violet-700/50 ${
+                activeFilter === filter.key
+                  ? 'violet-gradient text-white shadow-lg'
+                  : 'bg-transparent text-violet-300 hover:bg-violet-600/10'
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Portfolio Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredItems.map((item) => (
+            <div key={item.id} className="card-bg rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group ring-1 ring-violet-700/25 hover:ring-violet-500/40">
+              <div className="relative overflow-hidden">
+                <div className="w-full h-64 relative">
+                  <img
+                    src={`${(item as any).image || '/file.svg'}?v=1`}
+                    alt={item.title}
+                    className="object-cover w-full h-full block"
+                    loading="lazy"
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/file.svg' }}
+                  />
+                </div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                  <a
+                    href={('url' in item && (item as any).url) ? (item as any).url : '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="opacity-0 group-hover:opacity-100 bg-violet-600 text-white px-6 py-3 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg"
+                  >
+                    View Project
+                  </a>
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-violet-100 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-violet-200/80 mb-4">
+                  {item.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {item.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 bg-violet-500/20 text-violet-300 text-sm rounded-full border border-violet-700/40"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <a
+            href="#contact"
+            className="inline-flex items-center px-8 py-3 border-2 border-violet-500 text-violet-300 font-semibold rounded-lg hover:bg-violet-600 hover:text-white transition-all duration-200"
+          >
+            Start Your Project
+            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
