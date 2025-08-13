@@ -36,7 +36,7 @@ export default function Portfolio() {
       id: 1,
       title: "Lemery Colleges Promotional Video",
       category: "video",
-      description: "Professional corporate video showcasing company values and culture",
+      description: "Promotional Video highlighting academic excellence, vibrant campus life, and courses for colleges",
       image: "/thumbnails/video1.jpg",
       tags: ["Corporate", "Branding", "Video Editing"],
       url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=995853468991606&rdid=1NSRcQ4A59BQeKce"
@@ -55,26 +55,44 @@ export default function Portfolio() {
     },
     {
       id: 3,
-      title: "Social Media Series",
+      title: "Brand Advertising Reel",
       category: "social",
-      description: "Engaging social media content series for lifestyle brand",
-      image: "/thumbnails/series.svg",
+      description: "Short, engaging video highlighting a brand’s products, identity, and marketing message.",
+      image: "/thumbnails/video18.jpg",
       tags: ["Social Media", "Content Creation", "Graphics"],
-      url: "https://www.instagram.com/francescamotaa_/reels/"
+      url: "https://www.instagram.com/mondaygeeks/reel/DMocFaRykze/"
+    },
+    {
+      id: 26,
+      title: "Brand Advertising Reel",
+      category: "social",
+      description: "Short, engaging video highlighting a brand’s products, identity, and marketing message.",
+      image: "/thumbnails/image20.jpg",
+      tags: ["Social Media", "Promo", "Reels"],
+      url: "https://www.instagram.com/reel/DM61b9Guc9Y/?igsh=MTNyOXA2bnBxZWViNw%3D%3D"
+    },
+    {
+      id: 27,
+      title: "Brand Advertising Reel",
+      category: "social",
+      description: "Short, engaging video highlighting a brand’s products, identity, and marketing message.",
+      image: "/thumbnails/image21.jpg",
+      tags: ["Social Media", "Product", "Reel"],
+      url: "https://www.instagram.com/mondaygeeks/reel/DMW-qS-ReJv/"
     },
     
     {
       id: 5,
-      title: "Autobiography Video",
+      title: "Creative Storytelling",
       category: "video",
-      description: "High-energy promotional video for major industry event",
+      description: "Engaging video using creative storytelling to inspire and connect with the audience.",
       image: "/thumbnails/video2.jpg",
       tags: ["Events", "Promotional", "Video Editing"],
       url: "https://drive.google.com/file/d/1nbdJKEeOyJx2R47EKOD6yspldFoiRJtq/view"
     },
     {
       id: 6,
-      title: "School Materials",
+      title: "School Public Materials",
       category: "design",
       description: "Eye-catching social media designs that engage, inform, and inspire your audience.",
       images: [
@@ -95,28 +113,40 @@ export default function Portfolio() {
       tags: ["Engage", "Inform", "Inspire"],
     },
     {
+      id: 25,
+      title: "Brand Logos and Designs",
+      category: "design",
+      description: "Logo, color palette, and social templates for a cohesive brand.",
+      images: [
+        "/thumbnails/image17.jpg",
+        "/thumbnails/image18.jpg",
+        "/thumbnails/image19.jpg",
+      ],
+      tags: ["Branding", "Logo", "Templates"],
+    },
+    {
       id: 7,
-      title: "Senior High Promotional Video",
+      title: "HFA Promotional Video",
       category: "video",
-      description: "Energetic cutdown edit optimized for social platforms with fast pacing and bold captions.",
+      description: "Promotional video showcasing Holy Family Academy’s values, achievements, and nurturing learning environment.",
       image: "/thumbnails/video3.jpg",
       tags: ["Music", "Cutdown", "Fast Edit"],
       url: "https://www.facebook.com/holyfamilyacademyofficial/videos/608500288464671/?vh=e&fs=e&mibextid=wwXIfr&rdid=Cy7QpmKc24JNYeTq#"
     },
     {
       id: 8,
-      title: "OSJAA Teaser",
+      title: "OSJAA Event Teaser",
       category: "video",
-      description: "Teaser edit with interview bites and b-roll to build curiosity and pace.",
+      description: "Exciting teaser video giving a sneak peek of upcoming OSJAA events and activities.",
       image: "/thumbnails/video4.jpg",
       tags: ["Documentary", "Teaser", "Story"],
       url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=639416051971626&rdid=kb9Kq4PsxHPOC7dC"
     },
     {
       id: 9,
-      title: "OSJAA DAY1 Video",
+      title: "OSJAA Sport Highlights",
       category: "video",
-      description: "Dynamic walkthrough showcasing facilities, student life, and campus highlights.",
+      description: "Action-packed video showing the best moments and achievements from OSJAA sports events.",
       image: "/thumbnails/video5.jpg",
       tags: ["Campus", "Walkthrough", "Video Editing"],
       url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=485353087709561&rdid=LfX9c3s0dpaiSK7q"
@@ -125,25 +155,25 @@ export default function Portfolio() {
       id: 10,
       title: "Short Film Trailer",
       category: "video",
-      description: "Tight trailer cut featuring impactful shots, text cards, and dynamic sound design.",
+      description: "Intense trailer giving a suspenseful preview of the short film’s thrilling moments.",
       image: "/thumbnails/video6.jpg",
       tags: ["Trailer", "Short Film", "Edit"],
       url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=1221759782272867&rdid=IHsmLUGoklxWya2U"
     },
     {
       id: 11,
-      title: "Siglakasan Day 1",
+      title: "SDE Sport Highlights",
       category: "video",
-      description: "Teaser edit with interview bites and b-roll to build curiosity and pace.",
+      description: "Video highlights showing the best plays and memorable moments from sports event.",
       image: "/thumbnails/video7.jpg",
       tags: ["Documentary", "Teaser", "Story"],
       url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=1295503781807697&rdid=KF2S4cpED7BzEbcy"
     },
     {
       id: 12,
-      title: "Leadership Training Event",
+      title: "SDE Leadership Training",
       category: "video",
-      description: "Narrative-driven brand story with interviews, b‑roll, and sound design.",
+      description: "Video highlighting the activities and key moments from the Leadership Training event.",
       image: "/thumbnails/video8.jpg",
       tags: ["Brand", "Story", "Edit"],
       url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=1226043195092267&rdid=DOJd45K92HrzbIY4"
@@ -152,7 +182,7 @@ export default function Portfolio() {
       id: 13,
       title: "Graduation Prom Highlights",
       category: "video",
-      description: "Heartfelt highlights capturing speeches, moments, and celebration.",
+      description: "Vibrant video capturing the excitement, memories, and celebrations of the Graduation Prom night.",
       image: "/thumbnails/video9.jpg",
       tags: ["Graduation", "Highlights", "Video Editing"],
       url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=486686337260855&rdid=1IoAhUHUvTt8rLED"
@@ -161,16 +191,16 @@ export default function Portfolio() {
       id: 14,
       title: "Holy Family Promotional Video",
       category: "video",
-      description: "High-energy recap featuring dynamic cuts, crowd reactions, and rhythmic pacing.",
+      description: "Warm, inspiring video that celebrates Holy Family Academy’s community spirit and student achievements.",
       image: "/thumbnails/video10.jpg",
       tags: ["Sports", "Highlights", "Video Editing"],
       url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=7749415925117772&rdid=yOqfUsWnBTQIlt2C"
     },
     {
       id: 15,
-      title: "Grand Coronation Night",
+      title: "Grand Coronation Night Highlights",
       category: "video",
-      description: "Stylized reel with cinematic color, smooth transitions, and dynamic pacing.",
+      description: "Cinematic recap showcasing the glamour, winners, and magical moments of the evening.",
       image: "/thumbnails/video11.jpg",
       tags: ["Cinematic", "Reel", "Edit"],
       url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=984006493139816&rdid=4Lvc7cDPIpfgbYeF"
@@ -179,7 +209,7 @@ export default function Portfolio() {
       id: 16,
       title: "El Filibusterismo Teaser",
       category: "video",
-      description: "A teaser cut blending interviews and b‑roll with rhythmic pacing and titles.",
+      description: "Dark, intriguing teaser hinting at secrets and the rising unrest in El Filibusterismo.",
       image: "/thumbnails/video12.jpg",
       tags: ["Documentary", "Teaser", "Edit"],
       url: "https://www.facebook.com/joan.16.cuenca/videos/1991234421219578/?fs=e&mibextid=wwXIfr&rdid=Pr0qzqN26cUrQGrU#"
@@ -188,47 +218,83 @@ export default function Portfolio() {
       id: 17,
       title: "DAZSMA Recollection Video",
       category: "video",
-      description: "A concise audio‑visual presentation highlighting key programs, people, and achievements.",
+      description: "Heartwarming video capturing the reflections, prayers, and bonding moments from the students.",
       image: "/thumbnails/video13.jpg",
       tags: ["Institutional", "AVP", "Edit"],
       url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=1235224821295411&rdid=vhzfR0afKWM2ruaR"
     },
     {
       id: 18,
-      title: "Our Lady of Mercy Academy",
+      title: "OLMA Recollection Video",
       category: "video",
-      description: "Orientation highlights with campus fly-throughs, departments, and student life.",
+      description: "Inspiring video capturing the reflections, prayers, and bonding moments from OLMA students.",
       image: "/thumbnails/video14.jpg",
       tags: ["Campus", "Orientation", "Edit"],
       url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=1774647559605909&rdid=rMbd1uUT9rMOnWdm"
     },
     {
       id: 19,
-      title: "BasicFaithFormationG11",
+      title: "Basic Faith Formation Highlights ",
       category: "video",
-      description: "A warm recap capturing activities, interviews, and impact moments from outreach.",
+      description: "Short recap showcasing the meaningful experiences and growth in Basic Faith Formation.",
       image: "/thumbnails/video15.jpg",
       tags: ["Outreach", "Recap", "Video Editing"],
       url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=205785872507985&rdid=uAoou3tv4snocXzN"
     },
     {
       id: 20,
-      title: "St. Joseph College of Rosario",
+      title: "St. Joseph College Recollection Video",
       category: "video",
-      description: "Fast‑paced anniversary highlights with dynamic cuts and emotive moments.",
+      description: "Inspiring video capturing reflections, prayers, and bonding moments from the St. Joseph Colleges.",
       image: "/thumbnails/video16.jpg",
       tags: ["Anniversary", "Highlights", "Video Editing"],
       url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=496438959957903"
     },
     {
       id: 21,
-      title: "Holy Family Intramurals",
+      title: "Sport Rules Edit",
       category: "video",
-      description: "Vibrant event recap featuring performances, audience energy, and dynamic pacing.",
+      description: "Informative edit highlighting the key rules and gameplay of different sports.",
       image: "/thumbnails/video17.jpg",
       tags: ["Cultural", "Event", "Video Editing"],
       url: "https://drive.google.com/file/d/1PZ0y7ax87Gwws34e-N7Oy-fIRv7bBeRi/view"
-    }
+    },
+    {
+      id: 22,
+      title: "UpKidz Playtrack Reels 1", 
+      category: "social",
+      description: "Fun and lively video showcasing the activities and joyful moments at UpKidz Playtrack.",
+      image: "/thumbnails/video19.jpg",
+      tags: ["Social Media", "Reels", "Carousels"],
+      url: "https://www.facebook.com/reel/727756256856285"
+    },
+    {
+      id: 23,
+      title: "UpKidz Playtrack Reels 2",
+      category: "social",
+      description: "Fun and lively video showcasing the activities and joyful moments at UpKidz Playtrack.",
+      image: "/thumbnails/video19.jpg",
+      tags: ["Social Media", "Reels", "Stories"],
+      url: "https://www.facebook.com/watch/?mibextid=wwXIfr&v=1243978027206571&rdid=6z0QtvKG6XcRdhSz"
+    },
+    {
+      id: 24,
+      title: "UpKidz Playtrack Reels 3",
+      category: "social",
+      description: "Fun and lively video showcasing the activities and joyful moments at UpKidz Playtrack.",
+      image: "/thumbnails/video19.jpg",
+      tags: ["Social Media", "Teaser", "Reel"],
+      url: "https://www.facebook.com/reel/3595606340733976"
+    },
+    {
+      id: 28,
+      title: "Influencers Travel Reels",
+      category: "social",
+      description: "Exciting video capturing travel adventures and experiences shared by an influencer.",
+      image: "/thumbnails/image22.jpg",
+      tags: ["Social Media", "Highlights", "Reel"],
+      url: "https://www.facebook.com/reel/3081466485373051/"
+    },
   ]
 
   const filters = [
@@ -315,16 +381,7 @@ export default function Portfolio() {
                 <p className="text-violet-200/80 mb-4">
                   {item.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {item.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-violet-500/20 text-violet-300 text-sm rounded-full border border-violet-700/40"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                
               </div>
             </div>
           ))}

@@ -109,7 +109,7 @@ export default function Footer() {
          <div className="border-t border-gray-800 mt-12 pt-8">
            <div className="flex justify-center items-center">
              <p className="text-gray-400 text-sm">
-               © 2024 CreativeStudio. All rights reserved.
+               © 2025 My Portfolio. All rights reserved.
              </p>
            </div>
          </div>

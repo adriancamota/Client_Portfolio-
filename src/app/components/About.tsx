@@ -8,7 +8,7 @@ export default function About() {
               About Me
             </h2>
             <p className="text-lg text-violet-200/80 mb-6">
-              I'm a Frances Camota a passionate video editor and graphic designer with over 3 years of experience creating compelling visual content. 
+              I'm Frances Camota a passionate video editor and graphic designer with over 3 years of experience creating compelling visual content. 
               My journey began with a love for storytelling through visuals, and I've since worked with clients across various industries 
               to bring their creative visions to life.
             </p>
@@ -20,38 +20,31 @@ export default function About() {
             <div className="grid grid-cols-2 gap-6">
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-violet-500 rounded-full"></div>
-                <span className="text-violet-200/90">Adobe Creative Suite</span>
+                <span className="text-violet-200/90">Adobe Premiere Pro</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-violet-500 rounded-full"></div>
-                <span className="text-violet-200/90">Final Cut Pro</span>
+                <span className="text-violet-200/90">Capcut Pro</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-violet-500 rounded-full"></div>
-                <span className="text-violet-200/90">Motion Graphics</span>
+                <span className="text-violet-200/90">Adobe Photoshop</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-violet-500 rounded-full"></div>
-                <span className="text-violet-200/90">3D Animation</span>
+                <span className="text-violet-200/90">Canva Pro</span>
               </div>
             </div>
           </div>
           
-          <div className="relative">
-            <div className="card-bg rounded-2xl p-4 md:p-6">
-              <div className="rounded-xl overflow-hidden shadow-xl ring-1 ring-violet-700/30">
-                <video
-                  className="w-full h-[260px] md:h-[360px] object-cover"
-                  src="https://www.facebook.com/watch/?mibextid=wwXIfr&v=608500288464671&rdid=1slpfQJ7hPliLVdi"
-                  controls
-                  preload="metadata"
-                />
-              </div>
-              <div className="text-center mt-6">
-                <h3 className="text-xl font-semibold text-violet-100 mb-2">Showreel</h3>
-                <p className="text-violet-200/80">A quick look at recent edits and design motion pieces.</p>
-              </div>
-            </div>
+          <div className="flex items-center justify-center">
+            <span className="gradient-ring rounded-full">
+              <img
+                src="/profile.jpg"
+                alt="Profile"
+                className="w-[22rem] h-[22rem] md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] rounded-full object-cover bg-black"
+              />
+            </span>
           </div>
         </div>
       </div>

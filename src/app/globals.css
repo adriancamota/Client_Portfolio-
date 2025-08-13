@@ -124,3 +124,23 @@ body {
 .scroll-indicator { width: 26px; height: 44px; border: 2px solid rgba(139,92,246,.6); border-radius: 16px; position: relative; margin: 0 auto; }
 .scroll-indicator:after { content: ""; position: absolute; top: 6px; left: 50%; width: 6px; height: 6px; background: rgba(139,92,246,.9); border-radius: 50%; transform: translateX(-50%); animation: dot 1.6s ease-in-out infinite; }
 @keyframes dot { 0% { opacity:.8; transform: translate(-50%,0) } 70% { opacity:.1; transform: translate(-50%,16px) } 100% { opacity:0; transform: translate(-50%,16px) } }
+
+/* Animated gradient ring for avatar/profile */
+.gradient-ring {
+  position: relative;
+  display: inline-block;
+  padding: 4px; /* ring thickness */
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 0deg,
+    #6d28d9 0%,
+    #a78bfa 25%,
+    #7c3aed 50%,
+    #a78bfa 75%,
+    #6d28d9 100%
+  );
+  animation: spin-slow 20s linear infinite;
+  box-shadow: 0 10px 40px rgba(124,58,237,.25);
+}
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
