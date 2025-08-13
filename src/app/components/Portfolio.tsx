@@ -42,7 +42,7 @@ export default function Portfolio() {
       description: "High-energy promotional video for major industry event",
       image: "/thumbnails/video2.jpg",
       tags: ["Events", "Promotional", "Video Editing"],
-      url: "/AUTOBIOGRAPHY.mp4"
+      url: "https://drive.google.com/file/d/1nbdJKEeOyJx2R47EKOD6yspldFoiRJtq/view"
     },
     {
       id: 6,
@@ -186,7 +186,7 @@ export default function Portfolio() {
       description: "Vibrant event recap featuring performances, audience energy, and dynamic pacing.",
       image: "/thumbnails/video17.jpg",
       tags: ["Cultural", "Event", "Video Editing"],
-      url: "/Intrams.mp4"
+      url: "https://drive.google.com/file/d/1PZ0y7ax87Gwws34e-N7Oy-fIRv7bBeRi/view"
     }
   ]
 
