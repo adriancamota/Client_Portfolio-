@@ -42,7 +42,7 @@ export default function About() {
               <div className="rounded-xl overflow-hidden shadow-xl ring-1 ring-violet-700/30">
                 <video
                   className="w-full h-[260px] md:h-[360px] object-cover"
-                  src="/showreel.mp4"
+                  src="https://www.facebook.com/watch/?mibextid=wwXIfr&v=608500288464671&rdid=1slpfQJ7hPliLVdi"
                   controls
                   preload="metadata"
                 />

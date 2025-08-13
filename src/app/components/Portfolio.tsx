@@ -1,10 +1,35 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState('all')
+  const [lightboxItem, setLightboxItem] = useState<any | null>(null)
+  const [lightboxIndex, setLightboxIndex] = useState<number>(0)
+
+  const getImages = (it: any): string[] => {
+    if (Array.isArray(it?.images) && it.images.length > 0) return it.images
+    if (typeof it?.image === 'string') return [it.image]
+    return ['/file.svg']
+  }
+
+  const openLightbox = (it: any, startIndex: number = 0) => {
+    setLightboxItem(it)
+    setLightboxIndex(startIndex)
+  }
+
+  // Close lightbox on ESC
+  useEffect(() => {
+    if (!lightboxItem) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxItem(null)
+      if (e.key === 'ArrowRight') setLightboxIndex((i) => (i + 1) % getImages(lightboxItem).length)
+      if (e.key === 'ArrowLeft') setLightboxIndex((i) => (i - 1 + getImages(lightboxItem).length) % getImages(lightboxItem).length)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [lightboxItem])
 
   const portfolioItems = [
     {
@@ -18,12 +43,15 @@ export default function Portfolio() {
     },
     {
       id: 2,
-      title: "Visual Poster Design",
+      title: "Film Poster Designs",
       category: "design",
       description: "Captivating poster designs that bring short films to life in a single frame.",
-      image: "/thumbnails/poster.svg",
+      images: [
+        "/thumbnails/image1.jpg",
+        "/thumbnails/image2.jpg",
+        "/thumbnails/image3.jpg",
+      ],
       tags: ["ShortFilm", "Documentary", "AnimatedFilm"],
-      url: "https://www.instagram.com/francescamotaa_/reels/"
     },
     {
       id: 3,
@@ -46,12 +74,25 @@ export default function Portfolio() {
     },
     {
       id: 6,
-      title: "Social Media Public Materials",
+      title: "School Materials",
       category: "design",
       description: "Eye-catching social media designs that engage, inform, and inspire your audience.",
-      image: "/thumbnails/social.svg",
+      images: [
+        "/thumbnails/image4.jpg",
+        "/thumbnails/image5.jpg",
+        "/thumbnails/image6.jpg",
+        "/thumbnails/image7.jpg",
+        "/thumbnails/image8.jpg",
+        "/thumbnails/image9.jpg",
+        "/thumbnails/image10.jpg",
+        "/thumbnails/image11.jpg",
+        "/thumbnails/image12.jpg",
+        "/thumbnails/image13.jpg",
+        "/thumbnails/image14.jpg",
+        "/thumbnails/image15.jpg",
+        "/thumbnails/image16.jpg",
+      ],
       tags: ["Engage", "Inform", "Inspire"],
-      url: "https://www.instagram.com/francescamotaa_/reels/"
     },
     {
       id: 7,
@@ -238,7 +279,7 @@ export default function Portfolio() {
               <div className="relative overflow-hidden">
                 <div className="w-full h-64 relative">
                   <img
-                    src={`${(item as any).image || '/file.svg'}?v=1`}
+                    src={`${(getImages(item)[0]) || '/file.svg'}?v=1`}
                     alt={item.title}
                     className="object-cover w-full h-full block"
                     loading="lazy"
@@ -246,14 +287,24 @@ export default function Portfolio() {
                   />
                 </div>
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
-                  <a
-                    href={('url' in item && (item as any).url) ? (item as any).url : '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="opacity-0 group-hover:opacity-100 bg-violet-600 text-white px-6 py-3 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg"
-                  >
-                    View Project
-                  </a>
+                  {item.category === 'design' ? (
+                    <button
+                      type="button"
+                      onClick={() => openLightbox(item, 0)}
+                      className="opacity-0 group-hover:opacity-100 bg-violet-600 text-white px-6 py-3 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg cursor-zoom-in"
+                    >
+                      View Project
+                    </button>
+                  ) : (
+                    <a
+                      href={('url' in item && (item as any).url) ? (item as any).url : '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="opacity-0 group-hover:opacity-100 bg-violet-600 text-white px-6 py-3 rounded-lg font-semibold transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg"
+                    >
+                      View Project
+                    </a>
+                  )}
                 </div>
               </div>
               
@@ -291,6 +342,55 @@ export default function Portfolio() {
           </a>
         </div>
       </div>
+      {/* Lightbox for design thumbnails */}
+      {lightboxItem && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setLightboxItem(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              aria-label="Close"
+              onClick={() => setLightboxItem(null)}
+              className="absolute -top-3 -right-3 z-10 bg-black/60 hover:bg-black/80 text-white rounded-full w-9 h-9 flex items-center justify-center"
+            >
+              ✕
+            </button>
+            <div className="bg-black rounded-xl overflow-hidden ring-1 ring-white/10 relative">
+              <img
+                src={`${getImages(lightboxItem)[lightboxIndex]}?v=1`}
+                alt={(lightboxItem as any).title || 'Design image'}
+                className="w-full max-h-[80vh] object-contain bg-black"
+              />
+              {/* Prev */}
+              {getImages(lightboxItem).length > 1 && (
+                <>
+                  <button
+                    aria-label="Previous"
+                    onClick={() => setLightboxIndex((i) => (i - 1 + getImages(lightboxItem).length) % getImages(lightboxItem).length)}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    aria-label="Next"
+                    onClick={() => setLightboxIndex((i) => (i + 1) % getImages(lightboxItem).length)}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center"
+                  >
+                    ›
+                  </button>
+                </>
+              )}
+            </div>
+            <div className="mt-3 text-center text-violet-100 text-sm">
+              {(lightboxItem as any).title} · {lightboxIndex + 1}/{getImages(lightboxItem).length}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
